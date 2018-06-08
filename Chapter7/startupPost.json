@@ -1,0 +1,102 @@
+[
+	{	
+		"description":"Post request",
+		"request":{
+			"uri":"/postdemo",
+			"method":"post"
+		},
+		"response":{
+			"text":"This is a post demo"
+		}
+	},
+	{	
+		"description":"Post request",
+		"request":{
+			"uri":"/postWithParam",
+			"method":"post",
+			"forms":{
+				"name":"PQA"
+			}
+		},
+		"response":{
+			"text":"This is a post with parameter"
+		}
+	},
+	{	
+		"description":"This is a request with cookies",
+		"request":{
+			"uri":"/getWithCookie",
+			"method":"get",
+			"cookies":{
+				"login":"true"
+			}
+		},
+		"response":{
+			"text":"This is a get request need cookies to access"
+		}
+	},
+	{	
+		"description":"This is a post with cookie",
+		"request":{
+			"uri":"/postWithCookie",
+			"method":"post",
+			"cookies":{
+				"login":"true"
+			},
+			"json":{
+				"name":"pqa",
+				"age":"20"
+			}
+		},
+		"response":{
+			"status":200,
+			"json":{
+				"pqa":"success",
+				"status":"1"
+			}
+		}
+	},
+	{
+		"description":"This is a post request with header",
+		"request":{
+			"uri":"/postWithHeaders",
+			"method":"post",
+			"headers":{
+				"content-type":"application/json"			
+			},
+			"json":{
+				"name":"pqa",
+				"age":"20"			
+			}
+		},
+		"response":{
+			"json":{
+				"pqa":"success",
+				"status":"1"
+			}
+		}
+	},
+	{	
+		"description":"a redirection sample",
+		"request":{
+			"uri":"/redirection"		
+		},
+			"redirectTo":"http://www.google.com"			
+	},
+	{	
+		"description":"a redirection to personal website",
+		"request":{
+			"uri":"/redirectTopath"		
+		},
+		"redirectTo":"/redirect/new"			
+	},
+	{	
+		"description":"this is a request target",
+		"request":{
+			"uri":"/redirect/new"		
+		},
+		"response":{
+			"text":"redirection is success"
+		}			
+	}
+]
